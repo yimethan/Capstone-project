@@ -74,12 +74,12 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
 
         # 프레임 원래 위치 지정
         self.frame_positions = {
-            'color1': (180, 370),  # 첫 번째 줄
-            'color2': (410, 370),
-            'color3': (640, 370),
-            'color4': (180, 560),  # 두 번째 줄
-            'color5': (410, 560),
-            'color6': (640, 560),
+            'color1': (180, 400),  # 첫 번째 줄
+            'color2': (410, 400),
+            'color3': (640, 400),
+            'color4': (180, 590),  # 두 번째 줄
+            'color5': (410, 590),
+            'color6': (640, 590),
         }
         
         # 진단사진 촬영 기회
@@ -184,12 +184,12 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.selected_button_color = ""
         self.button_positions = {'select1': 490, 'select2': 845, 'select3': 1200,}
         self.frame_positions = {
-            'color1': (180, 370),  # 첫 번째 줄
-            'color2': (410, 370),
-            'color3': (640, 370),
-            'color4': (180, 560),  # 두 번째 줄
-            'color5': (410, 560),
-            'color6': (640, 560),}
+            'color1': (180, 400),  # 첫 번째 줄
+            'color2': (410, 400),
+            'color3': (640, 400),
+            'color4': (180, 590),  # 두 번째 줄
+            'color5': (410, 590),
+            'color6': (640, 590),}
         self.attempts = 0
         self.num_value = 0
         self.remaining_time = 30
@@ -318,7 +318,10 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         colors = [
             self.frame_colors.get(f"{tone_prefix}1", "#ffffff"),
             self.frame_colors.get(f"{tone_prefix}2", "#ffffff"),
-            self.frame_colors.get(f"{tone_prefix}3", "#ffffff")
+            self.frame_colors.get(f"{tone_prefix}3", "#ffffff"),
+            self.frame_colors.get(f"{tone_prefix}4", "#ffffff"),
+            self.frame_colors.get(f"{tone_prefix}5", "#ffffff"),
+            self.frame_colors.get(f"{tone_prefix}6", "#ffffff")
         ]
         
         if self.tone_result == 'spr':
@@ -336,6 +339,9 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.color1.setStyleSheet(f"background-color: {colors[0]}; border: 2px solid #c8c8c8")
         self.color2.setStyleSheet(f"background-color: {colors[1]}; border: 2px solid #c8c8c8")
         self.color3.setStyleSheet(f"background-color: {colors[2]}; border: 2px solid #c8c8c8")
+        self.color4.setStyleSheet(f"background-color: {colors[3]}; border: 2px solid #c8c8c8")
+        self.color5.setStyleSheet(f"background-color: {colors[4]}; border: 2px solid #c8c8c8")
+        self.color6.setStyleSheet(f"background-color: {colors[5]}; border: 2px solid #c8c8c8")
 
 
     # 프레임 선택 버튼
@@ -366,60 +372,60 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         # 선택된 프레임 (테두리 두껍게, 크기 약간 키우기)
         if self.tone_result == 'spr':
             if frame_number == 1:
-                self._select_frame(self.color1, 175, 365, color, 'spr1', frame_number)
+                self._select_frame(self.color1, 175, 395, color, 'spr1', frame_number)
             elif frame_number == 2:
-                self._select_frame(self.color2, 405, 365, color, 'spr2', frame_number)
+                self._select_frame(self.color2, 405, 395, color, 'spr2', frame_number)
             elif frame_number == 3:
-                self._select_frame(self.color3, 635, 365, color, 'spr3', frame_number)
+                self._select_frame(self.color3, 635, 395, color, 'spr3', frame_number)
             elif frame_number == 4:
-                self._select_frame(self.color4, 175, 555, color, 'spr4', frame_number)
+                self._select_frame(self.color4, 175, 585, color, 'spr4', frame_number)
             elif frame_number == 5:
-                self._select_frame(self.color5, 405, 555, color, 'spr5', frame_number)
+                self._select_frame(self.color5, 405, 585, color, 'spr5', frame_number)
             elif frame_number == 6:
-                self._select_frame(self.color6, 635, 555, color, 'spr6', frame_number)
+                self._select_frame(self.color6, 635, 585, color, 'spr6', frame_number)
                 
                 
         if self.tone_result == 'sum':
             if frame_number == 1:
-                self._select_frame(self.color1, 175, 365, color, 'sum1', frame_number)
+                self._select_frame(self.color1, 175, 395, color, 'sum1', frame_number)
             elif frame_number == 2:
-                self._select_frame(self.color2, 405, 365, color, 'sum2', frame_number)
+                self._select_frame(self.color2, 405, 395, color, 'sum2', frame_number)
             elif frame_number == 3:
-                self._select_frame(self.color3, 635, 365, color, 'sum3', frame_number)
+                self._select_frame(self.color3, 635, 395, color, 'sum3', frame_number)
             elif frame_number == 4:
-                self._select_frame(self.color4, 175, 555, color, 'sum4', frame_number)
+                self._select_frame(self.color4, 175, 585, color, 'sum4', frame_number)
             elif frame_number == 5:
-                self._select_frame(self.color5, 405, 555, color, 'sum5', frame_number)
+                self._select_frame(self.color5, 405, 585, color, 'sum5', frame_number)
             elif frame_number == 6:
-                self._select_frame(self.color6, 635, 555, color, 'sum6', frame_number)
+                self._select_frame(self.color6, 635, 585, color, 'sum6', frame_number)
                 
         if self.tone_result == 'fal':
             if frame_number == 1:
-                self._select_frame(self.color1, 175, 365, color, 'fal1', frame_number)
+                self._select_frame(self.color1, 175, 395, color, 'fal1', frame_number)
             elif frame_number == 2:
-                self._select_frame(self.color2, 405, 365, color, 'fal2', frame_number)
+                self._select_frame(self.color2, 405, 395, color, 'fal2', frame_number)
             elif frame_number == 3:
-                self._select_frame(self.color3, 635, 365, color, 'fal3', frame_number)
+                self._select_frame(self.color3, 635, 395, color, 'fal3', frame_number)
             elif frame_number == 4:
-                self._select_frame(self.color4, 175, 555, color, 'fal4', frame_number)
+                self._select_frame(self.color4, 175, 585, color, 'fal4', frame_number)
             elif frame_number == 5:
-                self._select_frame(self.color5, 405, 555, color, 'fal5', frame_number)
+                self._select_frame(self.color5, 405, 585, color, 'fal5', frame_number)
             elif frame_number == 6:
-                self._select_frame(self.color6, 635, 555, color, 'fal6', frame_number)
+                self._select_frame(self.color6, 635, 585, color, 'fal6', frame_number)
                 
         if self.tone_result == 'win':
             if frame_number == 1:
-                self._select_frame(self.color1, 175, 365, color, 'win1', frame_number)
+                self._select_frame(self.color1, 175, 395, color, 'win1', frame_number)
             elif frame_number == 2:
-                self._select_frame(self.color2, 405, 365, color, 'win2', frame_number)
+                self._select_frame(self.color2, 405, 395, color, 'win2', frame_number)
             elif frame_number == 3:
-                self._select_frame(self.color3, 635, 365, color, 'win3', frame_number)
+                self._select_frame(self.color3, 635, 395, color, 'win3', frame_number)
             elif frame_number == 4:
-                self._select_frame(self.color4, 175, 555, color, 'win4', frame_number)
+                self._select_frame(self.color4, 175, 585, color, 'win4', frame_number)
             elif frame_number == 5:
-                self._select_frame(self.color5, 405, 555, color, 'win5', frame_number)
+                self._select_frame(self.color5, 405, 585, color, 'win5', frame_number)
             elif frame_number == 6:
-                self._select_frame(self.color6, 635, 555, color, 'win6', frame_number)
+                self._select_frame(self.color6, 635, 585, color, 'win6', frame_number)
 
     def _select_frame(self, frame, x, y, color, frame_result, frame_number):
         self.selected_frame = frame
