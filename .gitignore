@@ -1,0 +1,10 @@
+personal_color/*.jpg
+personal_color/images/
+personal_color/models
+
+*/__pycache__
+__pycache__
+
+results/
+
+.vscode
