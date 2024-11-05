@@ -2,7 +2,7 @@
 import time
 
 class Hue():
-    def __init__(self, bridge_ip='192.168.0.8'):
+    def __init__(self, bridge_ip='192.168.0.2'):
         self.bridge_ip = bridge_ip
         
         self.b = Bridge(self.bridge_ip)

@@ -87,12 +87,12 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
 
         # 조명 색상 지정
         self.light_colors = {
-            'spr1': "#e63412",
-            'spr2': "#ffe300",
-            'spr3': "#ff7b89",
-            'sum1': '#9c89c8',
-            'sum2': '#ffafca',
-            'sum3': '#edfad5',
+            'spr1': "#ffb3b3",
+            'spr2': "#fffaaa",
+            'spr3': "#9ed881",
+            'sum1': '#a0dad0',
+            'sum2': '#a2a2cc',
+            'sum3': '#f7bcd4',
             'fal1': '#c88f3a',
             'fal2': '#7f9e58',
             'fal3': '#7da5b0',
@@ -108,25 +108,25 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
             'spr3': "#A9D88A",
             'spr4': "#ffffff",
             'spr5': "#000000",
-            'spr6': "#C3C3C3",
-            'sum1': '#8ED2C5',
+            'spr6': "#F6DCE3",
+            'sum1': '#a1c5dd',
             'sum2': '#9A9ACC',
             'sum3': '#F7B9D4',
             'sum4': "#ffffff",
             'sum5': "#000000",
-            'sum6': "#C3C3C3",
+            'sum6': "#F6DCE3",
             'fal1': '#A65241',
             'fal2': '#979839',
             'fal3': '#9C4F73',
             'fal4': "#ffffff",
             'fal5': "#000000",
-            'fal6': "#C3C3C3",
+            'fal6': "#F6DCE3",
             'win1': '#193FA0',
             'win2': '#2F0D4E',
             'win3': '#20574E',
             'win4': "#ffffff",
             'win5': "#000000",
-            'win6': "#C3C3C3",
+            'win6': "#F6DCE3",
         }
 
         # 카메라 촬영 타이머 설정
@@ -162,7 +162,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.return_timer.timeout.connect(self.goto_first)
         
         self.selected_frame_num = 0
-        self.seleceted_lighting_num = 0
+        self.selected_lighting_num = 0
 
     #--------------------------------------------------------
 
@@ -203,7 +203,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.frame_gen = None
         
         self.selected_frame_num = 0
-        self.seleceted_lighting_num = 0
+        self.selected_lighting_num = 0
             
     def reset_selections(self):
         # 선택된 조명 버튼 초기화
@@ -270,7 +270,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
     # 조명 선택 버튼
     def SelectBtn(self, btn_number):
         
-        self.seleceted_lighting_num = btn_number
+        self.selected_lighting_num = btn_number
 
         # 선택 X 버튼은 초기화
         if self.selected_button is not None:
@@ -546,7 +546,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
             self.capture_photo(index=7)
             if self.num_value >= 5:
                 self.goToNextPage()
-                self.hue.set_tone('default')
+                self.hue.set_color_tone('default')
                 return
             # self.delayed_check()
 
@@ -623,7 +623,6 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
             send_diag_results(self.selected_frame_num, self.selected_lighting_num, self.tone_result)
             insert_qr()
             threading.Thread(target=send_frame).start()
-            threading.Thread(target=send_selections, args=(self.tone_result, self.selected_button_color)).start()
             self.finalPhoto2.setPixmap(QPixmap(os.path.join(prefix, "results", "qr_img.jpg")).scaled(self.finalPhoto.size(), Qt.KeepAspectRatio))
             print_image()
             

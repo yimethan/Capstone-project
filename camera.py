@@ -38,7 +38,7 @@ def get_camera_frame():
     
     fps = cap.get(cv2.CAP_PROP_FPS)
 
-    out_vid_path = os.path.join(prefix, 'results', 'output.avi')
+    out_vid_path = os.path.join(prefix, 'results', 'output.mp4')
     # out = cv2.VideoWriter(out_vid_path, fourcc, 30.0, (640, 480))
     out = cv2.VideoWriter(out_vid_path, fourcc, fps, (int(cap.get(3)), int(cap.get(4))))\
 
@@ -58,7 +58,7 @@ def get_camera_frame():
     return frame_generator(), cap, out
 
 
-def trim_video(video_path='results/output.avi', seconds=2):
+def trim_video(video_path='results/output.mp4', seconds=2):
     video = VideoFileClip(video_path)
     trimmed_video = video.subclip(seconds, video.duration)
     trimmed_video.write_videofile(video_path, codec="libx264")

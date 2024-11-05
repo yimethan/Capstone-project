@@ -60,7 +60,7 @@ def insert_frame2(result='sum1'):
     canvas.paste(img4, (img_size[0] + 100, img_size[1] + 100))
 
     # 배경 이미지 불러오기
-    background_path = os.path.join(prefix, "media/frame1.png")
+    background_path = os.path.join(prefix, "media/frame3.png")
     background_img = Image.open(background_path).convert("RGBA")
     background_img = background_img.resize((1500, 1000))  # 전체 크기로 리사이즈
 

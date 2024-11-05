@@ -541,7 +541,7 @@ class Ui_ColorLog(object):
         self.color6.setObjectName(u"color6")
         self.color6.setGeometry(QRect(640, 590, 151, 151))
         self.color6.setFont(font8)
-        self.color6.setStyleSheet(u"border: 2px solid ")
+        self.color6.setStyleSheet(u"border: 2px solid; background-color: #F6DCE3;")
         self.stackedWidget.addWidget(self.page_9)
 
         #page10
@@ -733,7 +733,7 @@ class Ui_ColorLog(object):
         self.smallLogo8.setText(QCoreApplication.translate("ColorLog", u"ColorLog", None))
         self.timer4.setText(QCoreApplication.translate("ColorLog", u"\uc81c\ud55c\uc2dc\uac04", None))
         # self.color2.setText(QCoreApplication.translate("ColorLog", u"\ud504\ub808\uc784", None))
-        # self.color3.setText(QCoreApplication.translate("ColorLog", u"\ud504\ub808\uc784", None))
+        self.color6.setText(QCoreApplication.translate("ColorLog", u"UIC EXPO\n""2024", None))
         self.back3.setText("")
         self.ex12.setText(QCoreApplication.translate("ColorLog", u"\ub193\uace0 \uac00\uc2dc\ub294 \ubb3c\uac74\uc774 \uc5c6\ub294\uc9c0 \n"
 "\ud655\uc778\ud574\uc8fc\uc138\uc694.", None))

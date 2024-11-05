@@ -90,7 +90,7 @@ def insert_frame_default(frame_num=6):
         new_img.paste(img3, (50, img_size[1] + 100))
         new_img.paste(img4, (img_size[0] + 100, img_size[1] + 100))
         
-        background_path = os.path.join(prefix, "media/frame1.png")
+        background_path = os.path.join(prefix, "media/frame4.png")
         background_img = Image.open(background_path).convert("RGBA")
         background_img = background_img.resize((1500, 1000))
         new_img = Image.alpha_composite(new_img.convert("RGBA"), background_img)
@@ -184,7 +184,7 @@ def insert_frame(result='sum1'):
         frame_color = '#A9D88A'
         
     elif(result == 'sum1'):
-        frame_color = '#8ed2c5'
+        frame_color = '#a1c5dd'
     elif(result == 'sum2'):
         frame_color = '#9a9acc'
     elif(result == 'sum3'):
@@ -242,7 +242,7 @@ def send_frame():
     server_url = 'https://colorlogs.site/api/api/photogroup/photogroup_upload'
 
     image_path = os.path.join(prefix, 'results/qr_img.jpg')
-    video_path = os.path.join(prefix, 'results/output.avi')
+    video_path = os.path.join(prefix, 'results/output.mp4')
     
     try:
         # 파일들을 전송할 딕셔너리
