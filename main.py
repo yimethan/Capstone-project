@@ -234,9 +234,9 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         # 파일 삭제
         result_folder = os.path.join(prefix, 'results')
         files = os.listdir(result_folder)
-        # for file in files:
-        #     full_path = os.path.join(result_folder, file)
-        #     os.remove(full_path)
+        for file in files:
+            full_path = os.path.join(result_folder, file)
+            os.remove(full_path)
         
     # 진단 결과에 따라 기본 조명색(선택지 3가지색) 변경
     def update_button_colors(self):

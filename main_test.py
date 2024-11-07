@@ -234,9 +234,9 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         # 파일 삭제
         result_folder = os.path.join(prefix, 'results')
         files = os.listdir(result_folder)
-        # for file in files:
-        #     full_path = os.path.join(result_folder, file)
-        #     os.remove(full_path)
+        for file in files:
+            full_path = os.path.join(result_folder, file)
+            os.remove(full_path)
         
     # 진단 결과에 따라 기본 조명색(선택지 3가지색) 변경
     def update_button_colors(self):
@@ -671,7 +671,8 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
                     else:
                         self.SelectBtn(1)
                 if self.selected_frame is None:
-                    self.SelectFrame(6)  # 아무것도 선택되지 않으면 1번 프레임 선택
+                    # self.SelectFrame(6)  # 아무것도 선택되지 않으면 1번 프레임 선택
+                    insert_frame_default()
                 self.goToNextPage()
 
     #----------------------------------------------------------------

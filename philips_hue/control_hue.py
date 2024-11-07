@@ -2,7 +2,7 @@
 import time
 
 class Hue():
-    def __init__(self, bridge_ip='192.168.0.2'):
+    def __init__(self, bridge_ip='192.168.0.86'):
         self.bridge_ip = bridge_ip
         
         self.b = Bridge(self.bridge_ip)
@@ -31,7 +31,7 @@ class Hue():
             'win3': {'hue': 54520, 'sat': 254, 'bri': 236}
         }
 
-    def set_color_tone(self, tone):
+    def set_color_tone(self, tone='default'):
         settings = self.color_settings.get(tone)
         if settings:
             for light_name in self.light_names:

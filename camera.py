@@ -33,8 +33,8 @@ def get_camera_frame():
 
     # 비디오 녹화를 위한 설정 (XVID 코덱 사용, 초당 30 프레임)
     # 리눅스는 xvid: libxvidcore, mp4v: gstreamer 필요
-    fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-    # fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    # fourcc = cv2.VideoWriter_fourcc(*'DIVX')
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     
     fps = cap.get(cv2.CAP_PROP_FPS)
 
