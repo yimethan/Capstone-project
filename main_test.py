@@ -231,7 +231,6 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         
         self.face_pos = None
         
-        # 파일 삭제
         result_folder = os.path.join(prefix, 'results')
         files = os.listdir(result_folder)
         for file in files:
@@ -671,8 +670,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
                     else:
                         self.SelectBtn(1)
                 if self.selected_frame is None:
-                    # self.SelectFrame(6)  # 아무것도 선택되지 않으면 1번 프레임 선택
-                    insert_frame_default()
+                    insert_frame_default() # black by default
                 self.goToNextPage()
 
     #----------------------------------------------------------------
