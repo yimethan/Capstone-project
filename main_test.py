@@ -161,7 +161,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.return_timer = QTimer(self)
         self.return_timer.timeout.connect(self.goto_first)
         
-        self.selected_frame_num = 0
+        self.selected_frame_num = 5
         self.selected_lighting_num = 0
 
     #--------------------------------------------------------
@@ -202,7 +202,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.cap = None
         self.frame_gen = None
         
-        self.selected_frame_num = 0
+        self.selected_frame_num = 6
         self.selected_lighting_num = 0
             
     def reset_selections(self):
@@ -671,8 +671,8 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
                     else:
                         self.SelectBtn(1)
                 if self.selected_frame is None:
-                    # self.SelectFrame(6)  # 아무것도 선택되지 않으면 1번 프레임 선택
-                    insert_frame_default()
+                    # self.SelectFrame(6)  # 아무것도 선택되지 않으면 6번 프레임 선택
+                    insert_frame_default(6)
                 self.goToNextPage()
 
     #----------------------------------------------------------------
