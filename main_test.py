@@ -672,7 +672,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
                         self.SelectBtn(1)
                 if self.selected_frame is None:
                     # self.SelectFrame(6)  # 아무것도 선택되지 않으면 6번 프레임 선택
-                    insert_frame_default(6)
+                    insert_frame_default(5)
                 self.goToNextPage()
 
     #----------------------------------------------------------------

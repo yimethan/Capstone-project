@@ -46,7 +46,7 @@ def increase_brightness(image, value):
 	return ImageEnhance.Brightness(image).enhance(factor)
 
 
-def insert_frame_default(frame_num=6):
+def insert_frame_default(frame_num=5):
     t_img1 = Image.open(os.path.join(prefix, "results/photo_1.jpg"))
     t_img2 = Image.open(os.path.join(prefix, "results/photo_2.jpg"))
     t_img3 = Image.open(os.path.join(prefix, "results/photo_3.jpg"))
@@ -264,6 +264,9 @@ def send_frame():
 
 
 def insert_qr():
+    if not os.path.exists(os.path.join(prefix, "results/merged_img.jpg")):
+        insert_frame_default()
+    
     spring_server_url = "https://colorlogs.site/api/api/user/qr-code"
     
     img = Image.open(os.path.join(prefix, "results/merged_img.jpg"))
