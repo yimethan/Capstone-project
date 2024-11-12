@@ -101,15 +101,6 @@ AI로 퍼스널컬러 진단 받고,
 
 <br>
 
-<style>
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 50vh;
-}
-</style>
-
 #### 색상 조명
 
 <p style="font-size: 110%; text-align: left; border: 1px solid; padding: 10px; box-shadow: 1px 2px; line-height: 2">
@@ -118,24 +109,7 @@ AI로 퍼스널컬러 진단 받고,
 
 <br>
 
-<div class="container" style="text-align: center;">
-  <div class="quadrant top-left">
-    <p1 style="background-color: #ff59b5; padding: 10px 20px; color: black;">Spring</p1> <br><br>
-    <img src='media/spr_light.png' width=200> 
-  </div>
-  <div class="quadrant top-right">
-    <p1 style="background-color: #d1f2ff; padding: 10px 20px; color: black;">Summer</p1><br><br>
-    <img src='media/sum_light.png' width=200>
-  </div>
-  <div class="quadrant bottom-left">
-    <p1 style="background-color: #a12303; padding: 10px 20px; color: white;">Fall</p1> <br><br>
-    <img src='media/fal_light.png' width=200>
-  </div>
-  <div class="quadrant bottom-right">
-    <p1 style="background-color: black; padding: 10px 20px; color: white;">Winter</p1><br><br>
-    <img src='media/win_light.png' width=200>
-  </div>
-</div>
+<img src='media/lightings.png' width=100%>
 
 
 ### Awards and Activities
