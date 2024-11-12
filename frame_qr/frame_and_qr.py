@@ -256,6 +256,9 @@ def send_frame():
 
 
 def insert_qr():
+    if not os.path.exists(os.path.join(prefix, "results/merged_img.jpg")):
+        insert_frame_default()
+    
     spring_server_url = "https://colorlogs.site/api/api/user/qr-code"
     
     if not os.path.exists(os.path.join(prefix, "results/merged_img.jpg")):
