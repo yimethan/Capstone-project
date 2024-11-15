@@ -241,7 +241,7 @@ def send_frame():
     # 스프링 서버의 엔드포인트 URL
     server_url = 'https://colorlogs.site/api/api/photogroup/photogroup_upload'
 
-    image_path = os.path.join(prefix, 'results/qr_img.jpg')
+    image_path = os.path.join(prefix, 'results/merged_img.jpg')
     video_path = os.path.join(prefix, 'results/output.mp4')
     
     try:
