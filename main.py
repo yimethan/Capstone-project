@@ -19,7 +19,7 @@ from printer.print_photo import print_image
 
 prefix = '/home/colorlog/Capstone-project' if platform.system() == 'Linux' else 'C:/Users/pomat/Capstone-project'
 
-def crop_and_resize_frame(frame, img_size=(890, 625)):
+def crop_and_resize_frame(frame):
     original_height, original_width = frame.shape[:2]  # 
     center_x = original_width // 2
     center_y = original_height // 2
@@ -30,8 +30,6 @@ def crop_and_resize_frame(frame, img_size=(890, 625)):
     cropped_frame = frame[:, left:right] # 1080, 720
     
     resized_frame = cv2.resize(cropped_frame, (937,625))
-    
-    top, bottom = int(center_x - 890 // 2), int(center_x + 890 // 2)
     
     return resized_frame
 
@@ -231,7 +229,6 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         
         self.face_pos = None
         
-        # 파일 삭제
         result_folder = os.path.join(prefix, 'results')
         files = os.listdir(result_folder)
         for file in files:
@@ -671,7 +668,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
                     else:
                         self.SelectBtn(1)
                 if self.selected_frame is None:
-                    self.SelectFrame(6)  # 아무것도 선택되지 않으면 1번 프레임 선택
+                    insert_frame_default() # black by default
                 self.goToNextPage()
 
     #----------------------------------------------------------------

@@ -231,7 +231,6 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         
         self.face_pos = None
         
-        # 파일 삭제
         result_folder = os.path.join(prefix, 'results')
         files = os.listdir(result_folder)
         for file in files:

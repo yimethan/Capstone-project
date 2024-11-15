@@ -61,13 +61,11 @@ def insert_frame_default(frame_num=5):
     crop_width = 600
     crop_height = 425
 
-    # 원본 이미지의 크기를 구합니다.
     original_width, original_height = t_img1.size
 
     center_x = original_width // 2
     center_y = original_height // 2
 
-    # 가운데를 기준으로 이미지를 자릅니다.
     left = int(center_x - crop_width // 2)
     top = int(center_y - crop_height // 2)
     right = int(center_x + crop_width // 2)
@@ -151,13 +149,11 @@ def insert_frame(result='sum1'):
     crop_width = 600
     crop_height = 425
 
-    # 원본 이미지의 크기를 구합니다.
     original_width, original_height = t_img1.size
 
     center_x = original_width // 2
     center_y = original_height // 2
 
-    # 가운데를 기준으로 이미지를 자릅니다.
     left = int(center_x - crop_width // 2)
     top = int(center_y - crop_height // 2)
     right = int(center_x + crop_width // 2)
@@ -238,23 +234,19 @@ def insert_frame(result='sum1'):
 
 
 def send_frame():
-    # 스프링 서버의 엔드포인트 URL
     server_url = 'https://colorlogs.site/api/api/photogroup/photogroup_upload'
 
     image_path = os.path.join(prefix, 'results/merged_img.jpg')
     video_path = os.path.join(prefix, 'results/output.mp4')
     
     try:
-        # 파일들을 전송할 딕셔너리
         files = {
             'video': open(video_path, 'rb'), # 동영상 파일 전송
             'image': open(image_path, 'rb'),  # 이미지 파일 전송
         }
 
-        # POST 요청 보내기
         response = requests.post(server_url, files=files)
 
-        # 응답 확인
         if response.status_code == 200:
             print('Photo group uploaded successfully.')
         else:
@@ -269,17 +261,17 @@ def insert_qr():
     
     spring_server_url = "https://colorlogs.site/api/api/user/qr-code"
     
+    if not os.path.exists(os.path.join(prefix, "results/merged_img.jpg")):
+        insert_frame_default()
+        
     img = Image.open(os.path.join(prefix, "results/merged_img.jpg"))
+    
     try:
-        # 스프링 서버로 GET 요청 보내기
         response = requests.get(spring_server_url)
 
-        # 응답 확인
         if response.status_code == 200:
-            # 링크를 가져옴
             qr_code_link = response.json()["link"]
 
-            # QR 코드 생성
             qr = qrcode.QRCode(
                 version=1,
                 error_correction=qrcode.constants.ERROR_CORRECT_H,
@@ -289,7 +281,6 @@ def insert_qr():
             qr.add_data(qr_code_link)
             qr.make(fit=True)
 
-            # QR 코드 이미지 저장
             qr_img = qr.make_image(fill_color="black", back_color="white")
             qr_img.save(os.path.join(prefix, "results/QRCodeImg.png"))
             print("QR 코드 생성 완료")
