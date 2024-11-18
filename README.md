@@ -1,6 +1,6 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=c9eb98&height=130&section=header&text=AI 퍼스널컬러 포토부스 📸&fontSize=40" width=100%/>
+# AI 퍼스널컬러 포토부스 📸
 
-[깃허브 Organization 링크](https://github.com/SCHU-Colorlog)
+[깃허브 Organization 링크](https://github.com/SCHU-Colorlog) | [Velog 포스트](https://velog.io/@yimethan/%EC%A1%B8%EC%97%85%EC%9E%91%ED%92%88-%EC%86%8C%EA%B0%9C-AI-%EA%B8%B0%EB%B0%98-%ED%8D%BC%EC%8A%A4%EB%84%90%EC%BB%AC%EB%9F%AC-%EC%A7%84%EB%8B%A8-%ED%8F%AC%ED%86%A0%EB%B6%80%EC%8A%A4)
 
 <p style="text-align: center; border: 1px solid; padding: 10px; box-shadow: 1px 2px">
 순천향대학교 사물인터넷학과 '날아오르라 졸작이여' 팀 졸업작품 <br>
@@ -56,7 +56,9 @@ AI로 퍼스널컬러 진단 받고,
 ✔️ 막대형 자석부착 백색 조명
 </p>
 
-![](https://velog.velcdn.com/images/yimethan/post/964ea024-6898-4560-a6ec-298e8dc8fedc/image.png)![](https://velog.velcdn.com/images/yimethan/post/9ca1c21c-7260-47d9-aa54-610e9765b2e8/image.png)
+<img src="media/hw1.JPG">
+<img src="media/hw2.png">
+
 
 ## Features 🎈
 
@@ -176,16 +178,6 @@ AI로 퍼스널컬러 진단 받고,
 
 <br>
 
-<style>
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 40vh;
-  justify-items: center;
-}
-</style>
-
 #### 색상 조명
 
 <p style="text-align: left; border: 1px solid; padding: 10px; box-shadow: 1px 2px; line-height: 2">
@@ -241,16 +233,16 @@ AI로 퍼스널컬러 진단 받고,
 
 #### 2024 산학연협력엑스포 @벡스코 (Busan, Korea)
 
-+ 3일 간 약 300명 이용 (전 연령대)
++ 3일 간 `약 300명` 이용 (전 연령대)
 + 봄: 분홍색, 여름: 하늘색, 가을: 벽돌색, 겨울 진보라색 프레임을 가장 많이 선택
 + 봄: 분홍색, 여름: 연보라색, 가을: 황토나 청색, 겨울 파란색 조명을 가장 많이 선택
 
 #### 순천향대 중앙도서관 1층 로비 전시 (Asan, Korea)
 
-+ 4일 (하루 3~4시간 운영) 간 약 180명 이용 (주로 20대 초반)
++ 4일 (하루 3~4시간 운영) 간 `약 180명` 이용 (주로 20대 초반)
 + 기본 프레임을 주로 선택 (흰색, 검정색 - 분홍 계열이 없으면 엑스포 프레임을 선택하기도)
   + 러블리하거나 시크하거나 둘 중 하나일까?
-+ 봄: 분홍색, 여름: 3, 가을: 3, 겨울: 2 조명을 가장 많이 선택
++ 봄: 분홍색, 여름: 분홍색, 가을: 청색, 겨울: 보라색 조명을 가장 많이 선택
 
 #### 특허 출원
 
