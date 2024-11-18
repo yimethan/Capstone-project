@@ -236,7 +236,7 @@ def insert_frame(result='sum1'):
 def send_frame():
     server_url = 'https://colorlogs.site/api/api/photogroup/photogroup_upload'
 
-    image_path = os.path.join(prefix, 'results/qr_img.jpg')
+    image_path = os.path.join(prefix, 'results/merged_img.jpg')
     video_path = os.path.join(prefix, 'results/output.mp4')
     
     try:
