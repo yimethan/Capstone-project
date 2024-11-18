@@ -132,7 +132,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         # 카메라 촬영 타이머 설정
         self.num_timer = QTimer(self)
         self.num_timer.timeout.connect(self.delayed_check)
-        self.num_timer.start(5000)
+        self.num_timer.start(7000)
 
         # 사진 찍는 횟수 0으로 초기화
         self.num_value = 0
@@ -162,7 +162,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.return_timer.timeout.connect(self.goto_first)
         
         self.selected_frame_num = 5
-        self.selected_lighting_num = 0
+        self.selected_lighting_num = 1
 
     #--------------------------------------------------------
 
@@ -203,7 +203,7 @@ class ColorLog(QMainWindow, Main_Ui.Ui_ColorLog):
         self.frame_gen = None
         
         self.selected_frame_num = 6
-        self.selected_lighting_num = 0
+        self.selected_lighting_num = 1
             
     def reset_selections(self):
         # 선택된 조명 버튼 초기화
